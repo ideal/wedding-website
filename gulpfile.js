@@ -27,4 +27,6 @@ gulp.task('minify-js', function () {
 });
 
 // default task
-gulp.task('default', ['sass', 'minify-js']);
+gulp.task('default', gulp.series(['sass', 'minify-js'], function(done) {
+    done();
+}));
